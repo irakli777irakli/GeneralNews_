@@ -1,0 +1,50 @@
+.main_article_content_wrapper{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5rem;
+    
+   
+}
+.main_article_content{
+    width: 40rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 3rem;
+}
+.main_title{
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+.main_article_author_date_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.main_article_author, .main_article_date, .main_article_text{
+    font-family: 'Signika Negative', sans-serif;
+
+}
+.main_article_author{
+    color: rgb(35, 56, 146);
+}
+
+.main_article_date{
+    color: gray;
+    
+
+}
+.main_article_text{
+   
+    font-size: 1.2rem;
+    color: gray;
+}

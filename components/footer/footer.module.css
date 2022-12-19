@@ -1,0 +1,26 @@
+.fter{
+    background-color: black;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.logo{
+    font-size: 2rem;
+    color: white;
+    font-family: 'Signika Negative', sans-serif;
+
+}
+.dateWrapper{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 2rem;
+}
+.dateWrapper{
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
