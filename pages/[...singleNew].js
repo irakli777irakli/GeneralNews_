@@ -21,11 +21,7 @@ export default function SingleNew(props) {
         </>
       )
      }
-     
-
-
-
-
+  
   return (
     <>
      <Head>
@@ -60,6 +56,7 @@ export async function getServerSideProps(context){
         }
       }
     }
+
     try{
       const singleArticle = await getSingleNew(category,date,time)
       if(singleArticle === undefined){
