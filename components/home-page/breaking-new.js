@@ -5,10 +5,10 @@ import { useRouter } from 'next/router';
 
 export default function BreakingNew({ singleBreakingNew, singleArticlePageImg }) {
   const router = useRouter()
-  const { imageUrl, title, author, date } = singleBreakingNew;
+  const { imageUrl, title, author, date, time } = singleBreakingNew;
 
   return (
-    <div className={styles.breaking_News_Container} onClick={singleBreakingNew ? () => router.push(`/technology/${date}/${title}`) : null}>
+    <div className={styles.breaking_News_Container} onClick={singleBreakingNew ? () => router.push(`/technology/${date}/${time}`) : null}>
       <div className={styles.img_wrapper}>
       <Image src={imageUrl} alt={title} fill={true} className={styles.image} quality={85} />
       </div>

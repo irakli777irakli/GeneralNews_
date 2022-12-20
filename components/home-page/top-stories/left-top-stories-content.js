@@ -4,7 +4,7 @@ import styles from './top-stories.module.css'
 import { useRouter } from 'next/router';
 
 export default function LeftTopStoriesContent({item,reverse,normalNew,singleCategoryNew,about}) {
-    const {imageUrl, title, author, content, id, date} = item;
+    const {imageUrl, title, author, content, id, date,time} = item;
     const router = useRouter()
     
     const determineImageSize = (wh) => {
@@ -39,7 +39,7 @@ export default function LeftTopStoriesContent({item,reverse,normalNew,singleCate
 
   return (
     <>
-     <div onClick={() => router.push(`/${about}/${date}/${title}`)} key={id} className={normalNew ? styles.single_left_new_col : styles.single_left_new}>
+     <div onClick={() => router.push(`/${about}/${date}/${time}`)} key={title} className={normalNew ? styles.single_left_new_col : styles.single_left_new}>
        {!reverse && <Image src={imageUrl} alt={title} width={determineImageSize("w")} height={determineImageSize('h')} />}
        <div className={styles.single_left_new_info}>
          {(!normalNew && !singleCategoryNew) && <hr className={styles.hr}/>}

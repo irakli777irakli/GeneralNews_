@@ -5,13 +5,13 @@ import { useRouter } from 'next/router';
 
 export default function RightTopStoriesContent({item,normalNew,about}) {
   const router = useRouter()
-  const {imageUrl, title, author,date} = item;
+  const {imageUrl, title, author,date,time} = item;
 
  
 
   return (
   
- <div onClick={()=> router.push(`/${about}/${date}/${title}`)} className={normalNew ?styles.single_right_new_rw: styles.single_right_new}>
+ <div onClick={()=> router.push(`/${about}/${date}/${time}`)} className={normalNew ?styles.single_right_new_rw: styles.single_right_new}>
     {!normalNew && <hr className={styles.hr}/>}
     <Image style={{flex:"1"}} src={imageUrl} alt={title} width={120} height={150} />
     {normalNew ? <div style={{flex:"1", display:'flex',flexDirection:'column'}}>

@@ -9,8 +9,10 @@
     height: 100%;
 }
 .image{
-   
-    object-fit: cover;
+   width: 100%;
+   object-fit: cover;
+    
+   object-position: 50% 45%; 
     filter: grayscale(60%);
 }
 .breaking_News_Tittle{
