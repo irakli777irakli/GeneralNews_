@@ -35,7 +35,8 @@ export async function getStaticProps(context){
         return {
             props: {
                 singleCategoryData: data,
-            }
+            },
+            revalidate: 3600
         }
     }catch(e){
         return {
