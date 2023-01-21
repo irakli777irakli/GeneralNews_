@@ -49,7 +49,7 @@ export async function getStaticProps(){
       props: {
         homepageNews: response,    
       },
-     revalidate: 3600,
+     revalidate: 1800,
     }
 
   }catch(e){

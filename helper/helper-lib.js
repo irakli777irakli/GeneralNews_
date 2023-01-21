@@ -1,5 +1,4 @@
-import styles from './helper.module.css'
-import Router, { useRouter } from 'next/router';
+
 export const newsCategories = [
     
     "technology",
@@ -34,14 +33,4 @@ export async function getSingleNew(category,date, time){
     }
 }
 
-export function errorMessage(e){
-    const router = useRouter()
-    return(
-        <div className={styles.errorWrapper}>
-        {e.message ? <h1 className={styles.header1}>{e.message}</h1> :
-         e ? <h1 className={styles.header1}>{e}</h1> : <h1 className={styles.header1}>Problem with api endpoint</h1>}
 
-        <button onClick={()=> router.push('/')} className={styles.errbtn}>Return to Home</button>
-        </div>
-      )
-}

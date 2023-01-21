@@ -3,3 +3,98 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --color-1: #3C4048;
+  --color-2: #FEBE8C;
+  --color-3: #FA7070;
+  --color-4: #fed23f;
+  --color-5: #eb7d5b;
+  --angle: 0deg;
+}
+
+
+
+.singleNew{
+  
+  position:fixed;
+  padding:0;
+  margin:0;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-image: linear-gradient(to right,  #ffeac3, #ecd8b2, #d8c29a);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.newLoading{
+  font-weight: 200;
+  font-size: 5rem;
+  letter-spacing: 5px;
+  font-family: 'Dancing Script', cursive;
+  
+  
+  background: linear-gradient(
+  var(--angle),
+  var(--color-1) 19%,
+  transparent 19%,
+  transparent 20%,
+  var(--color-2) 20%,
+  var(--color-2) 39%,
+  transparent 39%,
+  transparent 40%,
+  var(--color-3) 40%,
+  var(--color-3) 59%,
+  transparent 59%,
+  transparent 60%,
+  var(--color-4) 60%,
+  var(--color-4) 79%,
+  transparent 79%,
+  transparent 80%,
+  var(--color-5) 80%
+);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+animation: 5s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #ca5f5f; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width:768px){
+  .newLoading{
+    font-size: 3rem;
+    margin-left: 80px;
+  }
+}
