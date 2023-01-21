@@ -6,6 +6,10 @@ import { useGlobalContext } from '../context/context';
 import Head from "next/head";
 import {useRouter} from 'next/router'
 import ErrorMessage from '../components/errorpage/ErrorMessage';
+
+
+
+
 export default function SingleNew(props) {
 
     const router = useRouter();
@@ -26,7 +30,6 @@ export default function SingleNew(props) {
     const getFromLocalStorage = async () => {
       try{
         const localStorageSlug = localStorage.getItem("newSlug");
-       
         return localStorageSlug;
       }catch (e){
         return "";
