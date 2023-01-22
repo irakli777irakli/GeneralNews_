@@ -1,7 +1,7 @@
 import React from 'react'
 import TopStories from '../components/home-page/top-stories/top-stories';
 import { newsCategories } from '../helper/helper-lib'
-import { errorMessage } from '../helper/helper-lib';
+import ErrorMessage from '../components/errorpage/ErrorMessage';
 import Head from "next/head";
 
 export default function index(props) {
@@ -9,7 +9,7 @@ export default function index(props) {
     
 
     if(props.error){
-       errorMessage(props.error)
+        ErrorMessage(props.error)
       }
 
     return (

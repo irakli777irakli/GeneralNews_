@@ -44,7 +44,7 @@ export async function getStaticProps(){
     const response = await Promise.all(newsCategories.map((category)=> {
       return fetch(`https://inshorts.deta.dev/news?category=${category}`).then(res=> res.json());
     }))
-    console.log(response);
+    
 
     return {
       props: {
