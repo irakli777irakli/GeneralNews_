@@ -13,7 +13,7 @@ export default function RightTopStoriesContent({item,normalNew,about}) {
   
  <div onClick={()=> router.push(`/${about}/${date}/${time}`)} className={normalNew ?styles.single_right_new_rw: styles.single_right_new}>
     {!normalNew && <hr className={styles.hr}/>}
-    <Image style={{flex:"1"}} src={imageUrl} alt={title} width={120} height={150} />
+    <Image style={{flex:"1"}} src={imageUrl} alt={title} width={200} height={170} quality={80} />
     {normalNew ? <div style={{flex:"1", display:'flex',flexDirection:'column'}}>
       <h1 className={`${styles.title} ${styles.rTitle}`}>{title}</h1>
       <p className={styles.author}>{author}</p>

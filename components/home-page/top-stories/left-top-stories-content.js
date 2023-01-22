@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import styles from './top-stories.module.css'
 import { useRouter } from 'next/router';
+import { useWindowSize } from '../../../custom-hook/UseWindowSize';
 
 export default function LeftTopStoriesContent({item,reverse,normalNew,singleCategoryNew,about}) {
     const {imageUrl, title, author, content, id, date,time} = item;
     const router = useRouter()
+    const size = useWindowSize();
+
     
     const determineImageSize = (wh) => {
       if(singleCategoryNew){
@@ -19,12 +22,13 @@ export default function LeftTopStoriesContent({item,reverse,normalNew,singleCate
         if(wh === 'h'){
           return 630
         }else{
-          return 1200
+          return 1260
         }
       }
       else{
         if(wh === 'h'){
-          return 420
+          // custom hook for tracking width
+          return size?.width < 768 ? 220 : 420
         }else{
           return 400
 
@@ -33,14 +37,10 @@ export default function LeftTopStoriesContent({item,reverse,normalNew,singleCate
     }
 
    
-      
-
-
-
   return (
     <>
      <div onClick={() => router.push(`/${about}/${date}/${time}`)} key={title} className={normalNew ? styles.single_left_new_col : styles.single_left_new}>
-       {!reverse && <Image src={imageUrl} alt={title} width={determineImageSize("w")} height={determineImageSize('h')} />}
+       {!reverse && <Image src={imageUrl} alt={title} width={determineImageSize("w")} height={determineImageSize('h')} quality={90} />}
        <div className={styles.single_left_new_info}>
          {(!normalNew && !singleCategoryNew) && <hr className={styles.hr}/>}
          <h1 className={styles.title}>{title}</h1>
@@ -53,7 +53,7 @@ export default function LeftTopStoriesContent({item,reverse,normalNew,singleCate
        </div>
 
        {singleCategoryNew && <p className={styles.content}>{content.substring(content.length - 250, content.length)}</p>}
-       {reverse && <Image src={imageUrl} alt={title} width={370} height={450}/>}
+       {reverse && <Image src={imageUrl} alt={title} width={determineImageSize("w")} height={determineImageSize('h')} quality={90}/>}
 
      </div>
    </>
