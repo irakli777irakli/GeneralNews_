@@ -98,7 +98,7 @@ export default function SingleNew(props) {
     try{
 
       const singleArticle = await getSingleNew(category,date,time)
-      if(singleArticle === undefined){
+      if(singleArticle === undefined || !singleArticle){
         return (
           <>
           {ErrorMessage("No such News was found")}
@@ -140,10 +140,10 @@ export default function SingleNew(props) {
    <title>{article?.title}</title>
      <meta name="description" content={`${article?.title}`} />
    </Head>
-      {loading && <div className="singleNew">
-        <span className="newLoading">General News_</span>
-        <div class="loader"></div>
-      </div>}
+      {loading && <div id="preloader">
+          <div id="loader"></div>
+      </div>
+      }
       
       {article && <BreakingNew singleBreakingNew={article} singleArticlePageImg={true}/>}
       {article && <SingleNewContent singleArticleContent={article}/>}
